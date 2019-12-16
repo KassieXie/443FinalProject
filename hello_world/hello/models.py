@@ -1,9 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Students(models.Model):
 	firstname = models.CharField(max_length=100)
 	lastname = models.CharField(max_length=100)
-	StudentID = models.IntegerField()
+	studentID = models.IntegerField()
 	major = models.CharField(max_length=50)
 	year = models.CharField(max_length=50)
 	GPA = models.DecimalField(max_digits = 5, decimal_places=2)
@@ -24,4 +26,4 @@ class GraduationRate(models.Model):
 	SixYrGradRate = models.DecimalField(max_digits = 5, decimal_places=2) #65.9
 
 
-# Create your models here.
+

@@ -1,0 +1,36 @@
+{% extends "hello/base.html" %}
+{% load crispy_forms_tags %}
+{% block content%}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet", type="text/css", href="{% static 'hello/css/style.css' %}">  
+    </head>
+    <body>
+		<a href="{% url 'home' %}">Home</a>
+		<a href="{% url 'about' %}">About</a>
+    </body>
+
+	<div class="content-section">
+		<form method="ENROLL">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class = "border-bottem mb-4">Register your account</legend>
+				{{ form|crispy }}				
+			</fieldset>
+			<div class="form-group">
+				<button class='btn btn-outline-info' type = "submit">Sign up</button>
+			</div>
+		</form>
+
+		<div class="border-top pt-3">
+			<small class="text-muted">
+				Already Have An Account? <a class="ml-2" href="{% url 'login' %">Sign In</a>
+			</small>
+		</div>
+
+	</div>
+</html>
+{% endblock %}

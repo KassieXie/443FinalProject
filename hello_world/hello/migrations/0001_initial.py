@@ -14,11 +14,12 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Students',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('studentID', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('firstname', models.CharField(max_length=100)),
                 ('lastname', models.CharField(max_length=100)),
-                ('age', models.IntegerField()),
+                ('year', models.CharField(max_length=50)),
                 ('major', models.CharField(max_length=50)),
+                ('GPA', models.DecimalField(max_digits=5, decimal_places=2))
             ],
         ),
     ]

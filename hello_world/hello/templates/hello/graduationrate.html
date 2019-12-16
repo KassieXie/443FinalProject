@@ -1,0 +1,55 @@
+
+{% extends "hello/base.html" %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Information Center</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <!-- Place jQuery and popper js files above bootstrap js file as bootstrap depends on jq=Query and Popper -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="section text-center">
+            <h2>Graduation Rate for 4 - 6 Years Graduation</h2>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+        </div>
+
+        <div class = "chart-container" style = "position: relative; height:40vh; width: 80vw">
+            <canvas id="myLineChart"></canvas>
+       
+            <script>var ctx = document.getElementById('myLineChart').getContext('2d');
+                var myLineChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ["Fall2006", "Fall2007", "Fall2008", "Fall2009", "Fall2010", "Fall2011", "Fall2011", "Fall2012", "Fall2013", "Fall2014", "Fall2015", "Fall2016", "Fall2017"],
+                        datasets: [{
+                            fill: false,
+                            pointBorderWidth: 1,
+                            pointHoverRadius: 5,
+                            backgroundColor: 'rgba(353,95,47,0.95)',
+                        }]
+                    },  
+
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Graduation Rate at Brockport Campus'
+                        }
+                    }
+                });
+            </script>
+
+        </div>
+    </div>
+</body>
+</html>
+
